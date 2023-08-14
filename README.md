@@ -1,6 +1,10 @@
+
 # 3DUAPP
 3D Universal App: 
 Application with 3D models and AR that runs on IOS, Android and Web using Expo, React Native, React Three Fiber, Three JS, React Native Three Fiber, React Native AR, React Native ARKit, React Native ARCore, React Native AR Foundation
+
+[![runs with Expo Go](https://img.shields.io/badge/Runs%20with%20Expo%20Go-4630EB.svg?style=flat-square&logo=EXPO&labelColor=f3f3f3&logoColor=000)](https://expo.dev/client)
+
 
 ## INSTALLATION
 - Install NodeJS
@@ -22,7 +26,7 @@ SERVER:
 - Serverless
 
 ## VERSION CONTROL: 
--  [Gitmoji, Gitmoji Changelog](https://www.npmjs.com/package/gitmoji-changelog)
+-  [Gitmoji, Gitmoji Changelog](https://docs.gitmoji-changelog.dev/#/)
 Workflow
 Here the recommended workflow to generate your changelog file using gitmoji-changelog:
 
