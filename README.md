@@ -1,13 +1,18 @@
 # 3DUAPP
-Universal 3d APP with react Native
+3D Universal App 
+
+## APP ARQUITECTURE
+
+Client Server Arquitecture
+
+CLIENT: 
+- Expo
+- Unity
+SERVER: 
+- Express
+- Serverless
+
+VERSION CONTROL: 
+- Gitmoji + Gitmoji Changelog
 
 
-Architecture:
-- APP:
-- - FRONT
-  - Expo
-  - NodeServer
-- - BACKEND
-  - NodeServer
-- - UNITY:
-  - ...
