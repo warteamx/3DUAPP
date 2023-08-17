@@ -1,0 +1,12 @@
+{
+    "name": "3dupaa",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "start:app": "cd Clients && cd app && npm start",
+        "start:server": "cd Servers && cd fastify-server && npm run dev",
+        "start": " npm run start:app && npm run start:server"
+
+    }
+}
