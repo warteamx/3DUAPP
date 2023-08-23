@@ -1,14 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Pressable } from 'react-native';
 
 export default function App() {
-  // make a call to the server
-  fetch('http://localhost:3000', {
-    method: 'GET',
-    mode: 'no-cors',
-  })
-    .then((response) => response.json())
-    .then((data) => console.log(data));
+  
+  // Add a button to the app that will send a request to the server localhost:3000/
+  // The server will respond with a message that will be displayed on the app
 
 
   return (
@@ -16,9 +12,13 @@ export default function App() {
       <Text>Open up App.tsx to start working on your app!</Text>
       <Text>Connected to Web, IOS and Android!</Text>
       <Text>Next Steps: Server CRUD and others </Text>
-      <Text>Amelia adlñfkjañsdflkj </Text>
+      <Pressable onPress={() => alert('Hello World!')}>
+        <Text>Pressable</Text>  
+      </Pressable>
+
 
       <StatusBar style="auto" />
+      
     </View>
   );
 }
