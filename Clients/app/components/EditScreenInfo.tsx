@@ -12,7 +12,7 @@ export default function EditScreenInfo({ path }: { path: string }) {
   const [data, setData] = useState({ data: 'no data' });
   // make a fetch data to localhost:3000 here with cors disabled
 
-  fetch('http://localhost:3000/example', {
+  fetch('http://localhost:3000/api/users/all', {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
