@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { StyleSheet } from 'react-native';
 
 import Colors from '../constants/Colors';
@@ -9,20 +9,16 @@ import { Text, View } from './Themed';
 
 export default function EditScreenInfo({ path }: { path: string }) {
 
-  const [data, setData] = useState({ data: 'no data' });
-  // make a fetch data to localhost:3000 here with cors disabled
+  const [data, setData] = useState({users: []});
+ 
+  useEffect(() => {
+    fetch('http://localhost:3000/api/users/all')
+      .then((response) => response.json())
+      .then((json) => setData(json))
+      .catch((error) => console.error(error));
+  }, []);
 
-  fetch('http://localhost:3000/api/users/all', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-    },
-  })
-    .then((response) => response.json())
-    .then((json) => setData(json))
-    .catch((error) => console.error(error));
-    console.log(data)
+console.log(data);
 
   return (
     <View>
@@ -45,7 +41,7 @@ export default function EditScreenInfo({ path }: { path: string }) {
           style={styles.getStartedText}
           lightColor="rgba(0,0,0,0.8)"
           darkColor="rgba(255,255,255,0.8)">
-          Changed!
+          Users express-server: {data.users.length} users
         </Text>
       </View>
 

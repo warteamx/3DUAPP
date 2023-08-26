@@ -20,6 +20,8 @@ import HttpStatusCodes from '@src/constants/HttpStatusCodes';
 import { NodeEnvs } from '@src/constants/misc';
 import { RouteError } from '@src/other/classes';
 
+import cors from 'cors';
+
 
 // **** Variables **** //
 
@@ -27,6 +29,9 @@ const app = express();
 
 
 // **** Setup **** //
+
+// Enable CORS
+app.use(cors());
 
 // Basic middleware
 app.use(express.json());
