@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
 
 import Colors from '../constants/Colors';
@@ -8,6 +8,22 @@ import { Text, View } from './Themed';
 
 
 export default function EditScreenInfo({ path }: { path: string }) {
+
+  const [data, setData] = useState({ data: 'no data' });
+  // make a fetch data to localhost:3000 here with cors disabled
+
+  fetch('http://localhost:3000/example', {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
+    },
+  })
+    .then((response) => response.json())
+    .then((json) => setData(json))
+    .catch((error) => console.error(error));
+    console.log(data)
+
   return (
     <View>
       <View style={styles.getStartedContainer}>
