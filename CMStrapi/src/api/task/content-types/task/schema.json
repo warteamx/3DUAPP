@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tasks",
+  "info": {
+    "singularName": "task",
+    "pluralName": "tasks",
+    "displayName": "Task"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "day": {
+      "type": "date"
+    },
+    "done": {
+      "type": "boolean"
+    },
+    "priority": {
+      "type": "enumeration",
+      "enum": [
+        "Low",
+        "Standard",
+        "High"
+      ]
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}
