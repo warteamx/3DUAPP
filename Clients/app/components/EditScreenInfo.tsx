@@ -6,19 +6,32 @@ import { ExternalLink } from './ExternalLink';
 import { MonoText } from './StyledText';
 import { Text, View } from './Themed';
 
+import { getTasks } from '../api/task'
 
 export default function EditScreenInfo({ path }: { path: string }) {
 
-  const [data, setData] = useState({users: []});
- 
+  const [users, setUsers] = useState({});
   useEffect(() => {
     fetch('http://localhost:3000/api/users/all')
       .then((response) => response.json())
-      .then((json) => setData(json))
+      .then((json) => setUsers(json))
       .catch((error) => console.error(error));
   }, []);
 
-console.log(data);
+  const [data, setData] = useState({});
+  useEffect(() => {
+    getTasks()
+      .then((response) => {
+        setData(response);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
+
+console.log('task Data from Strapi', data);
+console.log('users Data from express-server', users);
+
 
   return (
     <View>
@@ -41,7 +54,7 @@ console.log(data);
           style={styles.getStartedText}
           lightColor="rgba(0,0,0,0.8)"
           darkColor="rgba(255,255,255,0.8)">
-          Users express-server: {data.users.length} users
+          {/* Users express-server: {data.users.length} users */}
         </Text>
       </View>
 
@@ -53,6 +66,8 @@ console.log(data);
             Tap here if your app doesn't automatically update after making changes
           </Text>
         </ExternalLink>
+        <Text> STRAPI: Connected!</Text>
+        <Text> EXPRESS: Connected!</Text>
       </View>
     </View>
   );
