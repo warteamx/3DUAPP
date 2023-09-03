@@ -7,6 +7,7 @@ import { MonoText } from './StyledText';
 import { Text, View } from './Themed';
 
 import { getTasks } from '../api/task'
+import TaskList from './TaskList';
 
 export default function EditScreenInfo({ path }: { path: string }) {
 
@@ -18,18 +19,18 @@ export default function EditScreenInfo({ path }: { path: string }) {
       .catch((error) => console.error(error));
   }, []);
 
-  const [data, setData] = useState({});
+  const [taskData, setTaskData] = useState({} as any);
   useEffect(() => {
     getTasks()
       .then((response) => {
-        setData(response);
+        setTaskData(response);
       })
       .catch((error) => {
         console.error(error);
       });
   }, []);
 
-console.log('task Data from Strapi', data);
+console.log('task Data from Strapi', taskData);
 console.log('users Data from express-server', users);
 
 
@@ -68,6 +69,10 @@ console.log('users Data from express-server', users);
         </ExternalLink>
         <Text> STRAPI: Connected!</Text>
         <Text> EXPRESS: Connected!</Text>
+        <Text>  Working </Text>
+      </View>
+      <View>
+        <TaskList taskData={taskData} />
       </View>
     </View>
   );
