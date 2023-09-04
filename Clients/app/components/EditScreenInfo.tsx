@@ -33,7 +33,6 @@ export default function EditScreenInfo({ path }: { path: string }) {
 console.log('task Data from Strapi', taskData);
 console.log('users Data from express-server', users);
 
-
   return (
     <View>
       <View style={styles.getStartedContainer}>
@@ -50,13 +49,6 @@ console.log('users Data from express-server', users);
           lightColor="rgba(0,0,0,0.05)">
           <MonoText>{path}</MonoText>
         </View>
-
-        <Text
-          style={styles.getStartedText}
-          lightColor="rgba(0,0,0,0.8)"
-          darkColor="rgba(255,255,255,0.8)">
-          {/* Users express-server: {data.users.length} users */}
-        </Text>
       </View>
 
       <View style={styles.helpContainer}>
