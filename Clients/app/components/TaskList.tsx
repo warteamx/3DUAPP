@@ -27,7 +27,7 @@ const App: React.FC<TaskListProps> = ({ taskData }) => {
     return (
         <View style={styles.container}>
            {tasks?.map((task) => (
-                <Task key={task.id} title={task.attributes.title} description={task.attributes.description} />
+                <Task key={task.id} id={task.id} title={task.attributes.title} description={task.attributes.description} />
             ))}
         </View>
     );

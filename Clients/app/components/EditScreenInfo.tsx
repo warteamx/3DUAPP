@@ -8,6 +8,7 @@ import { Text, View } from './Themed';
 
 import { getTasks } from '../api/task'
 import TaskList from './TaskList';
+import TaskEdit from './TaskEdit';
 
 export default function EditScreenInfo({ path }: { path: string }) {
 
@@ -61,9 +62,10 @@ console.log('users Data from express-server', users);
         </ExternalLink>
         <Text> STRAPI: Connected!</Text>
         <Text> EXPRESS: Connected!</Text>
-        <Text>  Working </Text>
+        <Text> Working </Text>
       </View>
       <View>
+        <Text> Task List component</Text>
         <TaskList taskData={taskData} />
       </View>
     </View>
